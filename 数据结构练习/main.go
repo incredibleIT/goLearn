@@ -31,4 +31,8 @@ func main() {
 		}
 	}
 
+	for i, j := range "hello world" {
+		fmt.Println(i, string(j))
+	}
+
 }
