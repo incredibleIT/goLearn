@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 )
 
@@ -49,6 +50,16 @@ func read02(file *os.File) {
 
 }
 
+func read03() {
+	file, err := ioutil.ReadFile("文本")
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(string(file))
+}
+
 func main() {
 
 	// os.Open()来打开文件, 反回句柄, 和err
@@ -58,4 +69,5 @@ func main() {
 
 	read02(file)
 
+	//read03()
 }
