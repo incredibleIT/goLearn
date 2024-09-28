@@ -49,7 +49,7 @@ func main() {
 
 	stu1 := new(Student) // 等同于 &Student{}
 
-	fmt.Println(*stu1, reflect.TypeOf(stu1)) // &{ 0 0 []} *main.Student
+	fmt.Println(*stu1, reflect.TypeOf(stu1)) // &{ 0 0 []} *server.Student
 
 }
 
