@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// 对于单向channale可由参数处指定在一个函数中的读写级别
+// 对于单向channal可由参数处指定在一个函数中的读写级别
 func read(c <-chan int) {
 	fmt.Println(<-c)
 }

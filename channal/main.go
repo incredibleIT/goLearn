@@ -7,6 +7,7 @@ import (
 // Channel是一种类型，用于在不同goroutine之间进行通信。它是一个线程安全的队列，遵循先入先出（FIFO）的原则
 // 其本身带有一把锁, 多个生产者时协程安全
 // 用于协程间数据传输
+// 默认发送和接收操作是阻塞的，直到发送方和接收方都就绪
 type Stu struct {
 	Name string
 	age  int
