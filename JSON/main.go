@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"runtime"
 )
 
 type response1 struct {
@@ -38,5 +39,7 @@ func main() {
 
 	json.Unmarshal(mapC, &m)
 	fmt.Println(m)
+
+	fmt.Println(runtime.NumCPU())
 
 }
