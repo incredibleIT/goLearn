@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h2>登录</h2>
+    <form action="http://localhost:8080/login" id="loginForm" method="post">
+        <input type="text" placeholder="用户名" required name="username">
+        <input type="password" placeholder="密码" required name="pwd">
+        <button type="submit">登录</button>
+    </form>
+    <div class="footer">
+        <p>© 2024 公司名称</p>
+    </div>
+</div>
+<!--<script>-->
+<!--    document.getElementById('loginForm').addEventListener('submit', function(e) {-->
+<!--        e.preventDefault();-->
+<!--        // 处理登录逻辑，如发送请求到后端-->
+<!--        alert('登录逻辑处理');-->
+<!--    });-->
+<!--</script>-->
+</body>
+</html>
