@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
 )
@@ -23,12 +22,8 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	mux := mux.NewRouter()
-	mux.HandleFunc("/w", func(writer http.ResponseWriter, request *http.Request) {
-		fmt.Fprint(writer, "hello")
-
-	})
+	http.HandleFunc("/test", index)
 
 	// 服务监听地址, 以及协议种类
-	http.ListenAndServe(":8080", mux)
+	http.ListenAndServe(":8080", nil)
 }
