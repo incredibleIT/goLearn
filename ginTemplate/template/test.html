@@ -2,49 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>test</title>
 </head>
+
+
+
+
 <body>
 
-<h1>template</h1>
+<p> {{ . }} </p>
 
-
-<h2>简单, 嵌套查询</h2>
-<h3>老师姓名: {{.mapData.name}}</h3>
-<h3>老师年龄: {{.mapData.age}}</h3>
-<h3>老师性别: {{.mapData.gender}}</h3>
-<br>
-<h3>学生姓名: {{.student.Name}}</h3>
-<h3>学生年龄: {{.student.Age}}</h3>
-
-
-
-<h2>循环, 条件判断</h2>
-{{/*只显示有年龄的学生*/}}
+<h1>stuList: </h1>
 
 <ul>
-    {{range $key, $student := .stuList}}
-        {{if $student.Age}}
-            <li>学生姓名: {{$student.Name}}</li>
-        {{end}}
+    {{range $index, $stu := .stuList}}
+
+    <li>姓名:{{ $stu.Name}} , 年龄: {{$stu.Age}}</li>
+
     {{end}}
 </ul>
 
 
-
-<h2>with作用域语句</h2>
-
-{{with .mapData}}
-    <p>{{.name}}</p>
-    <p>{{.age}}</p>
-    <p>{{.gender}}</p>
-{{end}}
-
-<h2>一些函数</h2>
-
-<p>第二个学生信息: 姓名: {{ (index .stuList 1).Name }} 年龄: {{ (index .stuList 1).Age }}</p>
-
-<h2>自定义模板函数</h2>
 <p>{{add 1 2}}</p>
 
 

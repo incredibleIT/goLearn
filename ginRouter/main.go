@@ -20,6 +20,7 @@ func f2(c *gin.Context) {
 
 	fmt.Println("GET:")
 	fmt.Println(c.Query("year"), c.Query("month"))
+
 	fmt.Println("POST:")
 
 	// urlencoded格式GIN会主动处理, 用PostForm()可取到
