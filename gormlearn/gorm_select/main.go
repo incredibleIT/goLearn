@@ -22,22 +22,22 @@ func main() {
 	}
 
 	student := Student{}
-	//// 查询以id升序排列的第一条记录
-	//db.First(&student)
-	//fmt.Println(student.Name, student.Age)
-	//
-	//// 查询自然排序的一条记录
-	//db.Take(&student)
-	//fmt.Println(student.Name, student.Age)
-	//
-	//// 查询以id升序排列的最后一条记录
-	//db.Last(&student)
-	//fmt.Println(student.Name, student.Age)
-	//
-	//// 查询所有记录
+	// 查询以id升序排列的第一条记录
+	db.First(&student)
+	fmt.Println(student.Name, student.Age)
+
+	// 查询自然排序的一条记录
+	db.Take(&student)
+	fmt.Println(student.Name, student.Age)
+
+	// 查询以id升序排列的最后一条记录
+	db.Last(&student)
+	fmt.Println(student.Name, student.Age)
+
+	// 查询所有记录
 	var studentList []Student
-	//db.Find(&studentList)
-	//fmt.Println(studentList)
+	db.Find(&studentList)
+	fmt.Println(studentList)
 
 	// 条件查询
 	//(1) string条件拼接
