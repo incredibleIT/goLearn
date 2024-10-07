@@ -35,7 +35,7 @@ func main() {
 	// 指定特定的字段插入
 	db.Select("Age").Create(&student01)
 	// 指定特定字段之外的字段插入
-	db.Select("Age").Create(&student01)
+	db.Omit("Age").Create(&student01)
 
 	// 可通过map结构进行插入, 但自动填充的字段都会失效
 	db.Model(&Student{}).Create(map[string]interface{}{"name": "yangyang05"})
