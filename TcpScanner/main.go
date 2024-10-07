@@ -33,7 +33,7 @@ func isOpen(p int) {
 // TCP 端口扫描工具
 func main() {
 
-	for p := 1; p <= 3306; p++ {
+	for p := 1; p <= 8888; p++ {
 		wg.Add(1)
 		go isOpen(p)
 	}
