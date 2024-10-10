@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -43,8 +44,6 @@ type Author struct {
 
 func main() {
 
-	// 书籍表与出版社表一对多关系, 与作者表多对多
-
 	dsn := "root:root@tcp(127.0.0.1:3306)/gorm?charset=utf8mb4&parseTime=True&loc=Local"
 
 	newLogger := logger.New(
@@ -66,8 +65,21 @@ func main() {
 		panic(err)
 	}
 
-	db.AutoMigrate(&Book{})
-	db.AutoMigrate(&Author{})
-	db.AutoMigrate(&Publish{})
+	// find  找到书ID为3的所有作者
+	var authors []Author
+	db.Model(&Book{ID: 7}).Association("Authors").Find(&authors)
+	fmt.Println(authors)
+
+	// upsert 插入或更新
+	db.Model(&Book{ID: 7}).Association("Authors").Append([]Author{{ID: 9, Name: "许仙", Age: 100}, {ID: 10, Name: "法海", Age: 1000}})
+
+	//del 删除, clear()会将书籍ID为7的全部删除
+	db.Model(&Book{ID: 7}).Association("Authors").Delete([]Author{{ID: 1}, {ID: 2}, {ID: 3}})
+
+	// replace 更新, 会先执行Clear() 然后Append()
+	db.Model(&Book{ID: 7}).Association("Authors").Replace([]Author{{ID: 1}, {ID: 2}, {ID: 3}})
+
+	// Count计数, ID为7的书有几个作者
+	db.Model(&Book{ID: 7}).Association("Authors").Count()
 
 }
