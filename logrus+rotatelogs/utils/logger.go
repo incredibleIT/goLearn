@@ -38,10 +38,11 @@ func InitLog(configFile string) {
 
 	// log记录文件位置
 	logPath := ParentPath + Viper.GetString("filePath")
+	fmt.Println(Viper.GetString("filePath"))
 	fmt.Println(logPath)
 
 	fout, err := rotatelogs.New(
-		logPath+".%Y%m%d%H%M.log",
+		logPath+".%Y%m%d%H%M",
 		rotatelogs.WithLinkName(logPath),
 		rotatelogs.WithRotationTime(1*time.Hour),
 		rotatelogs.WithMaxAge(7*24*time.Hour),
