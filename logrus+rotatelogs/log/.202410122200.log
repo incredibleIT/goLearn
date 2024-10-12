@@ -1,0 +1,6 @@
+time="2024-10-12 22:45:13.434" level=info msg=info......................log func=logger/test.TestLogger file="D:/GoWork/src/awesomeProject/logrus+rotatelogs/test/logger_test.go:12"
+time="2024-10-12 22:45:13.462" level=warning msg=warn......................log func=logger/test.TestLogger file="D:/GoWork/src/awesomeProject/logrus+rotatelogs/test/logger_test.go:13"
+time="2024-10-12 22:45:13.463" level=error msg=error......................log func=logger/test.TestLogger file="D:/GoWork/src/awesomeProject/logrus+rotatelogs/test/logger_test.go:14"
+time="2024-10-12 22:45:40.867" level=info msg=info......................log func=logger/test.TestLogger file="D:/GoWork/src/awesomeProject/logrus+rotatelogs/test/logger_test.go:12"
+time="2024-10-12 22:45:40.908" level=warning msg=warn......................log func=logger/test.TestLogger file="D:/GoWork/src/awesomeProject/logrus+rotatelogs/test/logger_test.go:13"
+time="2024-10-12 22:45:40.908" level=error msg=error......................log func=logger/test.TestLogger file="D:/GoWork/src/awesomeProject/logrus+rotatelogs/test/logger_test.go:14"
