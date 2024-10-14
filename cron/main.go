@@ -19,6 +19,10 @@ func (s stu2) Run() {
 	fmt.Println("stu2 run")
 }
 
+func (s stu2) Keep() {
+	fmt.Println("stu2 keep")
+}
+
 // 返回一个支持至 秒 级别的 cron
 func newWithSeconds() *cron.Cron {
 	secondParser := cron.NewParser(cron.Second | cron.Minute |
