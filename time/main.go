@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"time"
 )
 
@@ -34,6 +35,10 @@ func main() {
 	}
 	fmt.Println(now.In(loc)) // 获得当前时区的具体时间
 
+	// 可以用time.Date()来指定一个特定时区的时间
+	t := time.Date(2024, 1, 1, 22, 30, 50, 0, loc)
+	fmt.Println(t)
+
 	// 时间运算
 	fmt.Println(now.Add(1 * time.Hour))
 	fmt.Println(now.Add(1 * time.Second))
@@ -57,5 +62,16 @@ func main() {
 	fmt.Println(now.UnixMilli()) // 毫秒数
 	fmt.Println(now.UnixMicro()) // 微秒数
 	fmt.Println(now.UnixNano())  // 纳秒数
+
+	// Duration(时间间隔), 是time包中一个非常重要的概念, 表示的是两个时间点之间的时间长度
+
+	// time.Duration类型是一个表示纳秒的整数类型, 可以用来表示时间间隔.可以使用它进行加减法运算
+
+	// 创建time.Duration对象
+	// 1. 使用time.Second, time.Hour, time.Minute 等常量创建
+	dur1 := time.Second * 1
+	dur2 := time.Minute * 2
+	dur3 := time.Hour * 3
+	fmt.Println(dur1, dur2, dur3, reflect.TypeOf(dur1), reflect.TypeOf(dur2), reflect.TypeOf(dur3))
 
 }
