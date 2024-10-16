@@ -74,4 +74,17 @@ func main() {
 	dur3 := time.Hour * 3
 	fmt.Println(dur1, dur2, dur3, reflect.TypeOf(dur1), reflect.TypeOf(dur2), reflect.TypeOf(dur3))
 
+	// 2. 从字符串来导入, ParseDuration()
+	dur4, _ := time.ParseDuration("1h2m3s")
+	fmt.Println(dur4)
+
+	// 3. 可将Duration对象与时间对象做加减运算
+	fmt.Println(time.Now().Add(dur4))
+	fmt.Println(time.Now().Sub(time.Now()))
+
+	// 4. 可以直接比较两个Duration对象
+	fmt.Println(dur1 > dur3)
+	fmt.Println(dur2 > dur3)
+	fmt.Println(dur3 > dur4)
+
 }
