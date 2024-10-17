@@ -35,7 +35,7 @@ func main() {
 	}
 	fmt.Println(now.In(loc)) // 获得当前时区的具体时间
 
-	// 可以用time.Date()来指定一个特定时区的时间
+	// 可以用time.Date()来指定一个特定时区的时间, 来构造一个Time类型
 	t := time.Date(2024, 1, 1, 22, 30, 50, 0, loc)
 	fmt.Println(t)
 
